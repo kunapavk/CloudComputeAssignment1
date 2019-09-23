@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#323841">
+    <title>Sample Web App Login</title>
+    <base href="/" />
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body class="container">
+    <div id="login" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form action="/login" method="post">
+                <div class="form-group title">
+                </div>
+
+                <div class="form-group">
+                    <label for="loginUsername" style="width: 100%; font-weight: normal" aria-label="Username">
+                        <input id="loginUsername" class="form-control" name="username" type="text" placeholder="Username" autocapitalize="off" />
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword" style="width: 100%; font-weight: normal" aria-label="Password">
+                        <input id="loginPassword" class="form-control" name="password" type="password" placeholder="Password" autocapitalize="off" />
+                    </label>
+                </div>
+
+                <% if (err) { %>
+                    <%= err %>
+                <% } %>
+
+                <input id="loginBtn" class="btn" type="submit" value="Login" name="Logintype"/>
+                <input id="registerBtn" class="btn" type="submit" value="Register" name="Logintype" />
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

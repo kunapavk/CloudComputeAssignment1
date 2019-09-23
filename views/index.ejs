@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#323841">
+    <title>Sample Web App Index</title>
+    <base href="/" />
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body class="container">
+    <h1> <%= message %> </h1>
+    <div id="details" class="row">
+        <% if (user.first_name || user.last_name || user.email) { %>
+        <h2>First Name:</h2> <%= user.first_name %> <br />
+        <h2>Last Name:</h2> <%= user.last_name %> <br />
+        <h2>Email:</h2> <%= user.email %> <br />
+        <% } else { %>
+        <form action="/details" method="post">
+            <%- hiddenRow %>
+            <div class="form-group">
+                <label for="userFirstName" style="width: 100%; font-weight: normal" aria-label="First Name">
+                    <input id="userFirstname" class="form-control" name="userFirstname" type="text" placeholder="First name" autocapitalize="off" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="userLastName" style="width: 100%; font-weight: normal" aria-label="Last Name">
+                    <input id="userLastname" class="form-control" name="userLastname" type="text" placeholder="Last name" autocapitalize="off" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="userEmail" style="width: 100%; font-weight: normal" aria-label="Email">
+                    <input id="userEmail" class="form-control" name="userEmail" type="text" placeholder="Email" autocapitalize="off" />
+                </label>
+            </div>
+
+            <input id="detailsBtn" class="btn" type="submit" value="Details" />
+        </form>
+        <% } %>
+    </div>
+
+</body>
+</html>
