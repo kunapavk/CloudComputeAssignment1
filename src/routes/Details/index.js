@@ -1,7 +1,6 @@
 const User = require(`../../libs/User`);
 
 module.exports = async function (req, res) {
-    console.log(req.body);
     const user = await User.addDetails(
         req.body.userId,
         req.body.userFirstname,

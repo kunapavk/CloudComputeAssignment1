@@ -32,7 +32,8 @@ exports.addDetails = (id, first_name, last_name, email) => {
             user.set(`email`, email);
 
             return user.save();
-        });
+        })
+        .then(obj => obj.toJSON());
 };
 
 exports.checkDetails = (id) => {
